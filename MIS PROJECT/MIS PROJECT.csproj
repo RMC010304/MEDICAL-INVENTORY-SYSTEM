@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5CA45725-D65D-4EF6-9C61-92B50AA6D0DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MIS_PROJECT</RootNamespace>
+    <AssemblyName>Medical Inventory System</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Admin\OneDrive\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MIS_PROJECT.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>28692A072E18DABC3DFF6AEE60A3E2149392FC99</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MIS PROJECT_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DoubleBufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet151.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet151.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MISDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MISDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl10.Designer.cs">
+      <DependentUpon>UserControl10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl11.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl11.Designer.cs">
+      <DependentUpon>UserControl11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl12.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl12.Designer.cs">
+      <DependentUpon>UserControl12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl13.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl13.Designer.cs">
+      <DependentUpon>UserControl13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl3.Designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl4.Designer.cs">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl5.Designer.cs">
+      <DependentUpon>UserControl5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl6.Designer.cs">
+      <DependentUpon>UserControl6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl7.Designer.cs">
+      <DependentUpon>UserControl7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl8.Designer.cs">
+      <DependentUpon>UserControl8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl9.Designer.cs">
+      <DependentUpon>UserControl9.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl10.resx">
+      <DependentUpon>UserControl10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl11.resx">
+      <DependentUpon>UserControl11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl12.resx">
+      <DependentUpon>UserControl12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl13.resx">
+      <DependentUpon>UserControl13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl3.resx">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl4.resx">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl5.resx">
+      <DependentUpon>UserControl5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl6.resx">
+      <DependentUpon>UserControl6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl7.resx">
+      <DependentUpon>UserControl7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl8.resx">
+      <DependentUpon>UserControl8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl9.resx">
+      <DependentUpon>UserControl9.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MIS PROJECT_TemporaryKey.pfx" />
+    <None Include="MISDataSet.xsc">
+      <DependentUpon>MISDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet.xss">
+      <DependentUpon>MISDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet1.xsc">
+      <DependentUpon>MISDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet1.xss">
+      <DependentUpon>MISDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet10.xsc">
+      <DependentUpon>MISDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet10.xss">
+      <DependentUpon>MISDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet11.xsc">
+      <DependentUpon>MISDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet11.xss">
+      <DependentUpon>MISDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet12.xsc">
+      <DependentUpon>MISDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet12.xss">
+      <DependentUpon>MISDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet13.xsc">
+      <DependentUpon>MISDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet13.xss">
+      <DependentUpon>MISDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet14.xsc">
+      <DependentUpon>MISDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet14.xss">
+      <DependentUpon>MISDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet151.xsc">
+      <DependentUpon>MISDataSet151.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet151.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet151.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet151.xss">
+      <DependentUpon>MISDataSet151.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet16.xsc">
+      <DependentUpon>MISDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet16.xss">
+      <DependentUpon>MISDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet17.xsc">
+      <DependentUpon>MISDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet17.xss">
+      <DependentUpon>MISDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet18.xsc">
+      <DependentUpon>MISDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet18.xss">
+      <DependentUpon>MISDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet19.xsc">
+      <DependentUpon>MISDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet19.xss">
+      <DependentUpon>MISDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet2.xsc">
+      <DependentUpon>MISDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet2.xss">
+      <DependentUpon>MISDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet20.xsc">
+      <DependentUpon>MISDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet20.xss">
+      <DependentUpon>MISDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet21.xsc">
+      <DependentUpon>MISDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet21.xss">
+      <DependentUpon>MISDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet22.xsc">
+      <DependentUpon>MISDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet22.xss">
+      <DependentUpon>MISDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet23.xsc">
+      <DependentUpon>MISDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet23.xss">
+      <DependentUpon>MISDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet24.xsc">
+      <DependentUpon>MISDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet24.xss">
+      <DependentUpon>MISDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet3.xsc">
+      <DependentUpon>MISDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet3.xss">
+      <DependentUpon>MISDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet4.xsc">
+      <DependentUpon>MISDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet4.xss">
+      <DependentUpon>MISDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet5.xsc">
+      <DependentUpon>MISDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet5.xss">
+      <DependentUpon>MISDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet6.xsc">
+      <DependentUpon>MISDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet6.xss">
+      <DependentUpon>MISDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet7.xsc">
+      <DependentUpon>MISDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet7.xss">
+      <DependentUpon>MISDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet8.xsc">
+      <DependentUpon>MISDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet8.xss">
+      <DependentUpon>MISDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet9.xsc">
+      <DependentUpon>MISDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="MISDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MISDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MISDataSet9.xss">
+      <DependentUpon>MISDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled372_20230421073945.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DASHBOARD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled248_20220314145649.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO GREY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEGOH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ARROW_2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_29px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-4-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-4-line %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout-grid-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-circle-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-circle-line %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-6-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-6-line %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indeterminate-circle-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop-left-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop-right-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled248_202203141456491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logofdhs-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled248_20220314145649-safeimagekit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-bin-6-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DASHBOARD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DASHBOARD22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DASHBOARD222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-s-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DASHBOARD1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-line %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading Screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-4-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
